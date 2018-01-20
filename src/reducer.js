@@ -1,4 +1,6 @@
-const reducer = (state = [], action) => {
-  return state;
-};
-export default reducer;
+import { combineReducers } from 'redux';
+import productListReducer from './modules/ProductList/reducer.js';
+
+export default combineReducers({
+  productListModule: productListReducer,
+});
