@@ -28,10 +28,28 @@ const reducer = (state = INIT_STATE, action) => {
           state.shoppingCart[index].amount + action.amount,
         );
       } else {
-        return state.shoppingCart.concat({
-          product: action.product,
-          amount: action.amount,
-        });
+        return state.set(
+          'shoppingCart',
+          state.shoppingCart.concat({
+            product: action.product,
+            amount: action.amount,
+          }),
+        );
+      }
+    case 'REMOVE_FROM_SHOPPING_CART':
+      const foundIdx = state.shoppingCart.findIndex(
+        item => action.productId === item.product.id,
+      );
+
+      if (foundIdx > -1) {
+        return state.set(
+          'shoppingCart',
+          state.shoppingCart
+            .slice(0, foundIdx)
+            .concat(state.shoppingCart.slice(foundIdx + 1)),
+        );
+      } else {
+        return state;
       }
     default:
       return state;
