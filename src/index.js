@@ -9,7 +9,20 @@ import reducer from './reducer.js';
 import registerServiceWorker from './registerServiceWorker';
 import './products.json';
 
+import { loadShoppingCart } from './modules/ShoppingCart/actions.js';
+
 const store = createStore(reducer, applyMiddleware(thunk));
+
+store.dispatch(loadShoppingCart());
+let currentShoppingCart;
+store.subscribe(() => {
+  const previousShoppingCart = currentShoppingCart;
+  currentShoppingCart = store.getState().shoppingCartModule.shoppingCart;
+  if (previousShoppingCart !== currentShoppingCart) {
+    localStorage.setItem('shoppingCart', JSON.stringify(currentShoppingCart));
+  }
+});
+
 ReactDOM.render(
   <Provider store={store}>
     <App />
