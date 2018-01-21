@@ -8,6 +8,7 @@ import App from './App';
 import reducer from './reducer.js';
 import registerServiceWorker from './registerServiceWorker';
 import './products.json';
+import 'font-awesome/css/font-awesome.css';
 
 import { loadShoppingCart } from './modules/ShoppingCart/actions.js';
 

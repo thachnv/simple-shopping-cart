@@ -10,7 +10,7 @@ export default class ShoppingCart extends Component {
       <div className="shopping-cart-wrapper">
         <h4>Your shopping cart</h4>
         {this.props.shoppingCart.map(cartItem => (
-          <div className="shopping-cart-item">
+          <div className="shopping-cart-item" key={cartItem.product.id}>
             <div className="shopping-cart-product-remove">
               <button
                 onClick={() =>

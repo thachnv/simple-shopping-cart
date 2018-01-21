@@ -16,6 +16,6 @@
       float: left;
       width: 30px; }
     .shopping-cart-wrapper .shopping-cart-item:after {
-      content: "";
+      content: '';
       display: table;
       clear: both; }
