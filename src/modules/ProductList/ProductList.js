@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ProductItem from './ProductItem.js';
+import './ProductList.css';
 
 export default class ProductList extends Component {
   componentWillMount() {

@@ -1,0 +1,26 @@
+.product-item {
+  text-align: left;
+  display: inline-block;
+  width: 13%;
+  margin: 1%;
+  padding: 5px;
+  .product-name {
+    color: #808080;
+    margin: 5px 0;
+    font-size: 14px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  .product-thumbnail {
+    width: 100%;
+    img {
+      width: 100%;
+    }
+  }
+  .product-price {
+    color: #808080;
+    font-size: 12px;
+    margin-bottom: 5px;
+  }
+}
